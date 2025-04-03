@@ -1,1 +1,14 @@
-feature
+Git flow is chosen as branch strategy for this project for several reasons:
+
+. As described in the project artifacts, we have releases in every 2 weeks for pre-prod and monthly for prod.
+git flow is adjusted to such schedules since it consists of small, medium or large changes supported from hot_fix,
+release and feature branches
+. It does not require to interact with main branch which would be high risk for financial data processing.
+. It enables as to have separate branch called develop for development.
+This option will enable us to keep away from main branch from which our product deploy on production.
+. QA branch is also applicable to support data quality framework.
+
+Merging:
+. hot_fix, release and feature branches will be merged with develop or qa
+. develop can be merged with main
+
