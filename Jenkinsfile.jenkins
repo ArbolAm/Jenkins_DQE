@@ -10,12 +10,14 @@ pipeline {
       stage('Build') {
         steps {
           echo 'Building...'
+          sh 'pip install robot'
         }
       }
 
       stage('Test') {
         steps {
            echo 'Testing...'
+           sh 'robot .\Jenkins_DQE\TestCases\employees.robot'
         }
       }
 
