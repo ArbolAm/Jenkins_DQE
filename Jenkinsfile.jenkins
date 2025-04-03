@@ -12,8 +12,8 @@ pipeline {
       stage('Pull') {
         steps {
           echo 'Pulling...'
-          sh 'git checkout main'
-          sh 'git pull origin main'
+          sh 'git checkout develop'
+          sh 'git pull origin develop'
         }
       }
 
