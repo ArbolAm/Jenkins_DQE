@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 5.0.1 (Python 3.12.4 on win32)" generated="20250322 01:52:06.208" rpa="false" schemaversion="3">
-<suite id="s1" name="Hr All" source="C:\Users\amiran_arbolishvili\PycharmProjects\DQE_MID_Robot_FR\dqe_mid_rf_tests\TestCases\hr_all.robot">
+<robot generator="Robot 5.0.1 (Python 3.12.4 on win32)" generated="20250404 00:54:31.596" rpa="false" schemaversion="3">
+<suite id="s1" name="Employees" source="C:\Users\amiran_arbolishvili\PycharmProjects\DQE_MID_Robot_FR\dqe_mid_rf_tests\TestCases\employees.robot">
 <kw name="Connect To Database" library="DatabaseLibrary" type="SETUP">
 <arg>pymssql</arg>
 <arg>${DB_NAME}</arg>
@@ -11,18 +11,18 @@
 <doc>Creates a database connection using the DB API 2.0 ``db_module`` and the parameters provided.
 Along with listed commonly used arguments (`db_name`, `db_host` etc.)
 you can set any other DB module specific parameters as key/value pairs.</doc>
-<msg timestamp="20250322 01:52:06.239" level="INFO">Looking for configuration file: 'resources\db.cfg'</msg>
-<msg timestamp="20250322 01:52:06.239" level="INFO">Configuration file doesn't exist</msg>
-<msg timestamp="20250322 01:52:06.255" level="INFO">Connect to DB using : pymssql.connect(database='trn', user='task_4', password=***, host='localhost', port=55128, charset='UTF-8')</msg>
-<status status="PASS" starttime="20250322 01:52:06.239" endtime="20250322 01:52:06.287"/>
+<msg timestamp="20250404 00:54:31.675" level="INFO">Looking for configuration file: 'resources\db.cfg'</msg>
+<msg timestamp="20250404 00:54:31.675" level="INFO">Configuration file doesn't exist</msg>
+<msg timestamp="20250404 00:54:31.691" level="INFO">Connect to DB using : pymssql.connect(database='trn', user='task_4', password=***, host='localhost', port=55128, charset='UTF-8')</msg>
+<status status="PASS" starttime="20250404 00:54:31.675" endtime="20250404 00:54:31.832"/>
 </kw>
 <test id="s1-t1" name="Check Employee Email Uniqueness" line="8">
 <kw name="Set Variable" library="BuiltIn">
 <var>${query}</var>
 <arg>SELECT email, count(*) FROM hr.employees GROUP BY email HAVING COUNT(*) &gt; 1</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20250322 01:52:06.287" level="INFO">${query} = SELECT email, count(*) FROM hr.employees GROUP BY email HAVING COUNT(*) &gt; 1</msg>
-<status status="PASS" starttime="20250322 01:52:06.287" endtime="20250322 01:52:06.287"/>
+<msg timestamp="20250404 00:54:31.832" level="INFO">${query} = SELECT email, count(*) FROM hr.employees GROUP BY email HAVING COUNT(*) &gt; 1</msg>
+<status status="PASS" starttime="20250404 00:54:31.832" endtime="20250404 00:54:31.832"/>
 </kw>
 <kw name="Query" library="DatabaseLibrary">
 <var>${emails}</var>
@@ -30,29 +30,29 @@ you can set any other DB module specific parameters as key/value pairs.</doc>
 <doc>Runs a query with the ``select_statement`` and returns the result as list of rows.
 The type of row values depends on the database module -
 usually they are tuples or tuple-like objects.</doc>
-<msg timestamp="20250322 01:52:06.287" level="INFO" html="true">Executing sql:&lt;br&gt;&lt;code style="font-weight: bold;"&gt;SELECT email, count(*) FROM hr.employees GROUP BY email HAVING COUNT(*) &gt; 1&lt;/code&gt;</msg>
-<msg timestamp="20250322 01:52:06.287" level="INFO">Commit the transaction</msg>
-<msg timestamp="20250322 01:52:06.287" level="INFO" html="true">&lt;div style="max-width: 100%; overflow-x: auto;"&gt;&lt;table style="width: auto; border-collapse: collapse; border: 2px solid rgb(140 140 140)"&gt;&lt;caption style="text-align: left; font-weight: bold; padding: 5px;"&gt;Query returned 0 rows&lt;/caption&gt;&lt;tr&gt;&lt;th scope="col" style="color:black; background-color: #d6ecd4; border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;Row&lt;/th&gt;&lt;th scope="col" style="background-color: #505050; color: #fff;border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;email&lt;/th&gt;&lt;th scope="col" style="background-color: #505050; color: #fff;border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;&lt;/th&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;</msg>
-<msg timestamp="20250322 01:52:06.287" level="INFO">${emails} = []</msg>
-<status status="PASS" starttime="20250322 01:52:06.287" endtime="20250322 01:52:06.287"/>
+<msg timestamp="20250404 00:54:31.832" level="INFO" html="true">Executing sql:&lt;br&gt;&lt;code style="font-weight: bold;"&gt;SELECT email, count(*) FROM hr.employees GROUP BY email HAVING COUNT(*) &gt; 1&lt;/code&gt;</msg>
+<msg timestamp="20250404 00:54:31.832" level="INFO">Commit the transaction</msg>
+<msg timestamp="20250404 00:54:31.832" level="INFO" html="true">&lt;div style="max-width: 100%; overflow-x: auto;"&gt;&lt;table style="width: auto; border-collapse: collapse; border: 2px solid rgb(140 140 140)"&gt;&lt;caption style="text-align: left; font-weight: bold; padding: 5px;"&gt;Query returned 0 rows&lt;/caption&gt;&lt;tr&gt;&lt;th scope="col" style="color:black; background-color: #d6ecd4; border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;Row&lt;/th&gt;&lt;th scope="col" style="background-color: #505050; color: #fff;border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;email&lt;/th&gt;&lt;th scope="col" style="background-color: #505050; color: #fff;border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;&lt;/th&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;</msg>
+<msg timestamp="20250404 00:54:31.832" level="INFO">${emails} = []</msg>
+<status status="PASS" starttime="20250404 00:54:31.832" endtime="20250404 00:54:31.832"/>
 </kw>
 <kw name="Should Be Empty" library="BuiltIn">
 <arg>${emails}</arg>
 <arg>There are duplicate emails.</arg>
 <doc>Verifies that the given item is empty.</doc>
-<msg timestamp="20250322 01:52:06.287" level="INFO">Length is 0</msg>
-<status status="PASS" starttime="20250322 01:52:06.287" endtime="20250322 01:52:06.287"/>
+<msg timestamp="20250404 00:54:31.832" level="INFO">Length is 0</msg>
+<status status="PASS" starttime="20250404 00:54:31.832" endtime="20250404 00:54:31.832"/>
 </kw>
 <doc>Check that employee emails are unique.</doc>
-<status status="PASS" starttime="20250322 01:52:06.287" endtime="20250322 01:52:06.287"/>
+<status status="PASS" starttime="20250404 00:54:31.832" endtime="20250404 00:54:31.832"/>
 </test>
 <test id="s1-t2" name="Check Employee Hire Date Validity" line="14">
 <kw name="Set Variable" library="BuiltIn">
 <var>${query}</var>
 <arg>SELECT hire_date FROM hr.employees WHERE hire_date NOT LIKE '____-__-__'</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20250322 01:52:06.287" level="INFO">${query} = SELECT hire_date FROM hr.employees WHERE hire_date NOT LIKE '____-__-__'</msg>
-<status status="PASS" starttime="20250322 01:52:06.287" endtime="20250322 01:52:06.287"/>
+<msg timestamp="20250404 00:54:31.832" level="INFO">${query} = SELECT hire_date FROM hr.employees WHERE hire_date NOT LIKE '____-__-__'</msg>
+<status status="PASS" starttime="20250404 00:54:31.832" endtime="20250404 00:54:31.832"/>
 </kw>
 <kw name="Query" library="DatabaseLibrary">
 <var>${hire_dates}</var>
@@ -60,225 +60,36 @@ usually they are tuples or tuple-like objects.</doc>
 <doc>Runs a query with the ``select_statement`` and returns the result as list of rows.
 The type of row values depends on the database module -
 usually they are tuples or tuple-like objects.</doc>
-<msg timestamp="20250322 01:52:06.287" level="INFO" html="true">Executing sql:&lt;br&gt;&lt;code style="font-weight: bold;"&gt;SELECT hire_date FROM hr.employees WHERE hire_date NOT LIKE '____-__-__'&lt;/code&gt;</msg>
-<msg timestamp="20250322 01:52:06.287" level="INFO">Commit the transaction</msg>
-<msg timestamp="20250322 01:52:06.287" level="INFO" html="true">&lt;div style="max-width: 100%; overflow-x: auto;"&gt;&lt;table style="width: auto; border-collapse: collapse; border: 2px solid rgb(140 140 140)"&gt;&lt;caption style="text-align: left; font-weight: bold; padding: 5px;"&gt;Query returned 0 rows&lt;/caption&gt;&lt;tr&gt;&lt;th scope="col" style="color:black; background-color: #d6ecd4; border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;Row&lt;/th&gt;&lt;th scope="col" style="background-color: #505050; color: #fff;border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;hire_date&lt;/th&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;</msg>
-<msg timestamp="20250322 01:52:06.287" level="INFO">${hire_dates} = []</msg>
-<status status="PASS" starttime="20250322 01:52:06.287" endtime="20250322 01:52:06.287"/>
+<msg timestamp="20250404 00:54:31.832" level="INFO" html="true">Executing sql:&lt;br&gt;&lt;code style="font-weight: bold;"&gt;SELECT hire_date FROM hr.employees WHERE hire_date NOT LIKE '____-__-__'&lt;/code&gt;</msg>
+<msg timestamp="20250404 00:54:31.848" level="INFO">Commit the transaction</msg>
+<msg timestamp="20250404 00:54:31.848" level="INFO" html="true">&lt;div style="max-width: 100%; overflow-x: auto;"&gt;&lt;table style="width: auto; border-collapse: collapse; border: 2px solid rgb(140 140 140)"&gt;&lt;caption style="text-align: left; font-weight: bold; padding: 5px;"&gt;Query returned 0 rows&lt;/caption&gt;&lt;tr&gt;&lt;th scope="col" style="color:black; background-color: #d6ecd4; border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;Row&lt;/th&gt;&lt;th scope="col" style="background-color: #505050; color: #fff;border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;hire_date&lt;/th&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;</msg>
+<msg timestamp="20250404 00:54:31.848" level="INFO">${hire_dates} = []</msg>
+<status status="PASS" starttime="20250404 00:54:31.832" endtime="20250404 00:54:31.848"/>
 </kw>
 <kw name="Should Be Empty" library="BuiltIn">
 <arg>${hire_dates}</arg>
 <arg>All hire date is valid</arg>
 <doc>Verifies that the given item is empty.</doc>
-<msg timestamp="20250322 01:52:06.287" level="INFO">Length is 0</msg>
-<status status="PASS" starttime="20250322 01:52:06.287" endtime="20250322 01:52:06.287"/>
+<msg timestamp="20250404 00:54:31.848" level="INFO">Length is 0</msg>
+<status status="PASS" starttime="20250404 00:54:31.848" endtime="20250404 00:54:31.848"/>
 </kw>
 <doc>Check if the employee hire date is valid.</doc>
-<status status="PASS" starttime="20250322 01:52:06.287" endtime="20250322 01:52:06.287"/>
-</test>
-<test id="s1-t3" name="Check Postal Code Existence" line="20">
-<kw name="Set Variable" library="BuiltIn">
-<var>${query}</var>
-<arg>SELECT postal_code FROM hr.locations WHERE postal_code IS NULL</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20250322 01:52:06.287" level="INFO">${query} = SELECT postal_code FROM hr.locations WHERE postal_code IS NULL</msg>
-<status status="PASS" starttime="20250322 01:52:06.287" endtime="20250322 01:52:06.287"/>
-</kw>
-<kw name="Query" library="DatabaseLibrary">
-<var>${missing_postal_codes}</var>
-<arg>${query}</arg>
-<doc>Runs a query with the ``select_statement`` and returns the result as list of rows.
-The type of row values depends on the database module -
-usually they are tuples or tuple-like objects.</doc>
-<msg timestamp="20250322 01:52:06.287" level="INFO" html="true">Executing sql:&lt;br&gt;&lt;code style="font-weight: bold;"&gt;SELECT postal_code FROM hr.locations WHERE postal_code IS NULL&lt;/code&gt;</msg>
-<msg timestamp="20250322 01:52:06.287" level="INFO">Commit the transaction</msg>
-<msg timestamp="20250322 01:52:06.287" level="INFO" html="true">&lt;div style="max-width: 100%; overflow-x: auto;"&gt;&lt;table style="width: auto; border-collapse: collapse; border: 2px solid rgb(140 140 140)"&gt;&lt;caption style="text-align: left; font-weight: bold; padding: 5px;"&gt;Query returned 1 rows&lt;/caption&gt;&lt;tr&gt;&lt;th scope="col" style="color:black; background-color: #d6ecd4; border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;Row&lt;/th&gt;&lt;th scope="col" style="background-color: #505050; color: #fff;border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;postal_code&lt;/th&gt;&lt;/tr&gt;&lt;tr style="background-color: var(--secondary-color, #eee)"&gt;&lt;th scope="row" style="color:black; background-color: #d6ecd4;border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;0&lt;/th&gt;&lt;td style="border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;None&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;</msg>
-<msg timestamp="20250322 01:52:06.287" level="INFO">${missing_postal_codes} = [(None,)]</msg>
-<status status="PASS" starttime="20250322 01:52:06.287" endtime="20250322 01:52:06.287"/>
-</kw>
-<kw name="Should Be Empty" library="BuiltIn">
-<arg>${missing_postal_codes}</arg>
-<arg>Some locations are missing postal codes.</arg>
-<doc>Verifies that the given item is empty.</doc>
-<msg timestamp="20250322 01:52:06.287" level="INFO">Length is 1</msg>
-<msg timestamp="20250322 01:52:06.302" level="FAIL">Some locations are missing postal codes.</msg>
-<status status="FAIL" starttime="20250322 01:52:06.287" endtime="20250322 01:52:06.302"/>
-</kw>
-<doc>Ensure every location has a postal code.</doc>
-<status status="FAIL" starttime="20250322 01:52:06.287" endtime="20250322 01:52:06.302">Some locations are missing postal codes.</status>
-</test>
-<test id="s1-t4" name="Check Country ID Validity" line="26">
-<kw name="Set Variable" library="BuiltIn">
-<var>${query}</var>
-<arg>SELECT country_id FROM hr.locations</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20250322 01:52:06.302" level="INFO">${query} = SELECT country_id FROM hr.locations</msg>
-<status status="PASS" starttime="20250322 01:52:06.302" endtime="20250322 01:52:06.302"/>
-</kw>
-<kw name="Query" library="DatabaseLibrary">
-<var>${country_ids}</var>
-<arg>${query}</arg>
-<doc>Runs a query with the ``select_statement`` and returns the result as list of rows.
-The type of row values depends on the database module -
-usually they are tuples or tuple-like objects.</doc>
-<msg timestamp="20250322 01:52:06.302" level="INFO" html="true">Executing sql:&lt;br&gt;&lt;code style="font-weight: bold;"&gt;SELECT country_id FROM hr.locations&lt;/code&gt;</msg>
-<msg timestamp="20250322 01:52:06.302" level="INFO">Commit the transaction</msg>
-<msg timestamp="20250322 01:52:06.302" level="INFO" html="true">&lt;div style="max-width: 100%; overflow-x: auto;"&gt;&lt;table style="width: auto; border-collapse: collapse; border: 2px solid rgb(140 140 140)"&gt;&lt;caption style="text-align: left; font-weight: bold; padding: 5px;"&gt;Query returned 7 rows&lt;/caption&gt;&lt;tr&gt;&lt;th scope="col" style="color:black; background-color: #d6ecd4; border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;Row&lt;/th&gt;&lt;th scope="col" style="background-color: #505050; color: #fff;border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;country_id&lt;/th&gt;&lt;/tr&gt;&lt;tr style="background-color: var(--secondary-color, #eee)"&gt;&lt;th scope="row" style="color:black; background-color: #d6ecd4;border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;0&lt;/th&gt;&lt;td style="border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;US&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;th scope="row" style="color:black; background-color: #d6ecd4;border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;1&lt;/th&gt;&lt;td style="border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;US&lt;/td&gt;&lt;/tr&gt;&lt;tr style="background-color: var(--secondary-color, #eee)"&gt;&lt;th scope="row" style="color:black; background-color: #d6ecd4;border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;2&lt;/th&gt;&lt;td style="border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;US&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;th scope="row" style="color:black; background-color: #d6ecd4;border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;3&lt;/th&gt;&lt;td style="border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;CA&lt;/td&gt;&lt;/tr&gt;&lt;tr style="background-color: var(--secondary-color, #eee)"&gt;&lt;th scope="row" style="color:black; background-color: #d6ecd4;border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;4&lt;/th&gt;&lt;td style="border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;UK&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;th scope="row" style="color:black; background-color: #d6ecd4;border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;5&lt;/th&gt;&lt;td style="border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;UK&lt;/td&gt;&lt;/tr&gt;&lt;tr style="background-color: var(--secondary-color, #eee)"&gt;&lt;th scope="row" style="color:black; background-color: #d6ecd4;border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;6&lt;/th&gt;&lt;td style="border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;DE&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;</msg>
-<msg timestamp="20250322 01:52:06.302" level="INFO">${country_ids} = [('US',), ('US',), ('US',), ('CA',), ('UK',), ('UK',), ('DE',)]</msg>
-<status status="PASS" starttime="20250322 01:52:06.302" endtime="20250322 01:52:06.302"/>
-</kw>
-<for flavor="IN">
-<var>${country_id}</var>
-<value>@{country_ids}</value>
-<iter>
-<var name="${country_id}">('US',)</var>
-<kw name="Should Match Regexp" library="BuiltIn">
-<arg>${country_id}[0]</arg>
-<arg>^[A-Z]{2}$</arg>
-<doc>Fails if ``string`` does not match ``pattern`` as a regular expression.</doc>
-<status status="PASS" starttime="20250322 01:52:06.302" endtime="20250322 01:52:06.302"/>
-</kw>
-<status status="PASS" starttime="20250322 01:52:06.302" endtime="20250322 01:52:06.302"/>
-</iter>
-<iter>
-<var name="${country_id}">('US',)</var>
-<kw name="Should Match Regexp" library="BuiltIn">
-<arg>${country_id}[0]</arg>
-<arg>^[A-Z]{2}$</arg>
-<doc>Fails if ``string`` does not match ``pattern`` as a regular expression.</doc>
-<status status="PASS" starttime="20250322 01:52:06.302" endtime="20250322 01:52:06.302"/>
-</kw>
-<status status="PASS" starttime="20250322 01:52:06.302" endtime="20250322 01:52:06.302"/>
-</iter>
-<iter>
-<var name="${country_id}">('US',)</var>
-<kw name="Should Match Regexp" library="BuiltIn">
-<arg>${country_id}[0]</arg>
-<arg>^[A-Z]{2}$</arg>
-<doc>Fails if ``string`` does not match ``pattern`` as a regular expression.</doc>
-<status status="PASS" starttime="20250322 01:52:06.302" endtime="20250322 01:52:06.302"/>
-</kw>
-<status status="PASS" starttime="20250322 01:52:06.302" endtime="20250322 01:52:06.302"/>
-</iter>
-<iter>
-<var name="${country_id}">('CA',)</var>
-<kw name="Should Match Regexp" library="BuiltIn">
-<arg>${country_id}[0]</arg>
-<arg>^[A-Z]{2}$</arg>
-<doc>Fails if ``string`` does not match ``pattern`` as a regular expression.</doc>
-<status status="PASS" starttime="20250322 01:52:06.302" endtime="20250322 01:52:06.302"/>
-</kw>
-<status status="PASS" starttime="20250322 01:52:06.302" endtime="20250322 01:52:06.302"/>
-</iter>
-<iter>
-<var name="${country_id}">('UK',)</var>
-<kw name="Should Match Regexp" library="BuiltIn">
-<arg>${country_id}[0]</arg>
-<arg>^[A-Z]{2}$</arg>
-<doc>Fails if ``string`` does not match ``pattern`` as a regular expression.</doc>
-<status status="PASS" starttime="20250322 01:52:06.302" endtime="20250322 01:52:06.302"/>
-</kw>
-<status status="PASS" starttime="20250322 01:52:06.302" endtime="20250322 01:52:06.302"/>
-</iter>
-<iter>
-<var name="${country_id}">('UK',)</var>
-<kw name="Should Match Regexp" library="BuiltIn">
-<arg>${country_id}[0]</arg>
-<arg>^[A-Z]{2}$</arg>
-<doc>Fails if ``string`` does not match ``pattern`` as a regular expression.</doc>
-<status status="PASS" starttime="20250322 01:52:06.302" endtime="20250322 01:52:06.302"/>
-</kw>
-<status status="PASS" starttime="20250322 01:52:06.302" endtime="20250322 01:52:06.302"/>
-</iter>
-<iter>
-<var name="${country_id}">('DE',)</var>
-<kw name="Should Match Regexp" library="BuiltIn">
-<arg>${country_id}[0]</arg>
-<arg>^[A-Z]{2}$</arg>
-<doc>Fails if ``string`` does not match ``pattern`` as a regular expression.</doc>
-<status status="PASS" starttime="20250322 01:52:06.302" endtime="20250322 01:52:06.302"/>
-</kw>
-<status status="PASS" starttime="20250322 01:52:06.302" endtime="20250322 01:52:06.302"/>
-</iter>
-<status status="PASS" starttime="20250322 01:52:06.302" endtime="20250322 01:52:06.302"/>
-</for>
-<doc>Ensure country_id is in expected 2 uppercase letter format.</doc>
-<status status="PASS" starttime="20250322 01:52:06.302" endtime="20250322 01:52:06.302"/>
-</test>
-<test id="s1-t5" name="Check Job Min Salary Accuracy" line="34">
-<kw name="Set Variable" library="BuiltIn">
-<var>${query}</var>
-<arg>SELECT min_salary FROM hr.jobs WHERE min_salary NOT BETWEEN 0 AND 100000</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20250322 01:52:06.302" level="INFO">${query} = SELECT min_salary FROM hr.jobs WHERE min_salary NOT BETWEEN 0 AND 100000</msg>
-<status status="PASS" starttime="20250322 01:52:06.302" endtime="20250322 01:52:06.302"/>
-</kw>
-<kw name="Query" library="DatabaseLibrary">
-<var>${min_salaries}</var>
-<arg>${query}</arg>
-<doc>Runs a query with the ``select_statement`` and returns the result as list of rows.
-The type of row values depends on the database module -
-usually they are tuples or tuple-like objects.</doc>
-<msg timestamp="20250322 01:52:06.302" level="INFO" html="true">Executing sql:&lt;br&gt;&lt;code style="font-weight: bold;"&gt;SELECT min_salary FROM hr.jobs WHERE min_salary NOT BETWEEN 0 AND 100000&lt;/code&gt;</msg>
-<msg timestamp="20250322 01:52:06.302" level="INFO">Commit the transaction</msg>
-<msg timestamp="20250322 01:52:06.302" level="INFO" html="true">&lt;div style="max-width: 100%; overflow-x: auto;"&gt;&lt;table style="width: auto; border-collapse: collapse; border: 2px solid rgb(140 140 140)"&gt;&lt;caption style="text-align: left; font-weight: bold; padding: 5px;"&gt;Query returned 0 rows&lt;/caption&gt;&lt;tr&gt;&lt;th scope="col" style="color:black; background-color: #d6ecd4; border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;Row&lt;/th&gt;&lt;th scope="col" style="background-color: #505050; color: #fff;border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;min_salary&lt;/th&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;</msg>
-<msg timestamp="20250322 01:52:06.302" level="INFO">${min_salaries} = []</msg>
-<status status="PASS" starttime="20250322 01:52:06.302" endtime="20250322 01:52:06.302"/>
-</kw>
-<kw name="Should Be Empty" library="BuiltIn">
-<arg>${min_salaries}</arg>
-<arg>Min salaries are accurate.</arg>
-<doc>Verifies that the given item is empty.</doc>
-<msg timestamp="20250322 01:52:06.302" level="INFO">Length is 0</msg>
-<status status="PASS" starttime="20250322 01:52:06.302" endtime="20250322 01:52:06.302"/>
-</kw>
-<doc>Ensure job minimum salary is in a logical range.</doc>
-<status status="PASS" starttime="20250322 01:52:06.302" endtime="20250322 01:52:06.302"/>
-</test>
-<test id="s1-t6" name="Check Min-Max Salary Consistency" line="40">
-<kw name="Set Variable" library="BuiltIn">
-<var>${query}</var>
-<arg>SELECT min_salary, max_salary FROM hr.jobs WHERE min_salary &gt; max_salary</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20250322 01:52:06.302" level="INFO">${query} = SELECT min_salary, max_salary FROM hr.jobs WHERE min_salary &gt; max_salary</msg>
-<status status="PASS" starttime="20250322 01:52:06.302" endtime="20250322 01:52:06.302"/>
-</kw>
-<kw name="Query" library="DatabaseLibrary">
-<var>${salaries}</var>
-<arg>${query}</arg>
-<doc>Runs a query with the ``select_statement`` and returns the result as list of rows.
-The type of row values depends on the database module -
-usually they are tuples or tuple-like objects.</doc>
-<msg timestamp="20250322 01:52:06.302" level="INFO" html="true">Executing sql:&lt;br&gt;&lt;code style="font-weight: bold;"&gt;SELECT min_salary, max_salary FROM hr.jobs WHERE min_salary &gt; max_salary&lt;/code&gt;</msg>
-<msg timestamp="20250322 01:52:06.302" level="INFO">Commit the transaction</msg>
-<msg timestamp="20250322 01:52:06.302" level="INFO" html="true">&lt;div style="max-width: 100%; overflow-x: auto;"&gt;&lt;table style="width: auto; border-collapse: collapse; border: 2px solid rgb(140 140 140)"&gt;&lt;caption style="text-align: left; font-weight: bold; padding: 5px;"&gt;Query returned 0 rows&lt;/caption&gt;&lt;tr&gt;&lt;th scope="col" style="color:black; background-color: #d6ecd4; border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;Row&lt;/th&gt;&lt;th scope="col" style="background-color: #505050; color: #fff;border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;min_salary&lt;/th&gt;&lt;th scope="col" style="background-color: #505050; color: #fff;border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;max_salary&lt;/th&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;</msg>
-<msg timestamp="20250322 01:52:06.302" level="INFO">${salaries} = []</msg>
-<status status="PASS" starttime="20250322 01:52:06.302" endtime="20250322 01:52:06.302"/>
-</kw>
-<kw name="Should Be Empty" library="BuiltIn">
-<arg>${salaries}</arg>
-<arg>Min &amp; Max salaries are consistent</arg>
-<doc>Verifies that the given item is empty.</doc>
-<msg timestamp="20250322 01:52:06.302" level="INFO">Length is 0</msg>
-<status status="PASS" starttime="20250322 01:52:06.302" endtime="20250322 01:52:06.302"/>
-</kw>
-<doc>Ensure min salary is less than max salary.</doc>
-<status status="PASS" starttime="20250322 01:52:06.302" endtime="20250322 01:52:06.302"/>
+<status status="PASS" starttime="20250404 00:54:31.832" endtime="20250404 00:54:31.848"/>
 </test>
 <kw name="Disconnect From Database" library="DatabaseLibrary" type="TEARDOWN">
 <doc>Disconnects from the database.</doc>
-<status status="PASS" starttime="20250322 01:52:06.302" endtime="20250322 01:52:06.302"/>
+<status status="PASS" starttime="20250404 00:54:31.848" endtime="20250404 00:54:31.848"/>
 </kw>
-<status status="FAIL" starttime="20250322 01:52:06.208" endtime="20250322 01:52:06.302"/>
+<status status="PASS" starttime="20250404 00:54:31.596" endtime="20250404 00:54:31.848"/>
 </suite>
 <statistics>
 <total>
-<stat pass="5" fail="1" skip="0">All Tests</stat>
+<stat pass="2" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat pass="5" fail="1" skip="0" id="s1" name="Hr All">Hr All</stat>
+<stat pass="2" fail="0" skip="0" id="s1" name="Employees">Employees</stat>
 </suite>
 </statistics>
 <errors>

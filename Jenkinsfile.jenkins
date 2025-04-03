@@ -2,6 +2,11 @@ pipeline {
    agent any
 
    stages {
+      stage('Git clone') {
+        steps {
+          sh 'git clone https://github.com/ArbolAm/Jenkins_DQE.git'
+        }
+      }
       stage('Build') {
         steps {
           echo 'Building...'
