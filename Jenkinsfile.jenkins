@@ -2,22 +2,24 @@ pipeline {
    agent any
 
    stages {
-      stage('Git clone') {
+      stage('Clone') {
         steps {
-          sh 'git clone https://github.com/ArbolAm/Jenkins_DQE.git'
+          echo 'Clonning...'
+          // sh 'git clone https://github.com/ArbolAm/Jenkins_DQE.git'
         }
       }
+
       stage('Build') {
         steps {
           echo 'Building...'
-          sh 'pip install robot'
+          sh 'chmod +x Jenkins_DQE/TestCases/simple_test.py'
         }
       }
 
       stage('Test') {
         steps {
            echo 'Testing...'
-           sh 'robot .\Jenkins_DQE\TestCases\employees.robot'
+           sh 'Jenkins_DQE/TestCases/simple_test.py'
         }
       }
 
