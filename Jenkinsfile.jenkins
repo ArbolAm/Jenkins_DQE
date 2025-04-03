@@ -9,6 +9,13 @@ pipeline {
         }
       }
 
+      stage('Pull') {
+        steps {
+          echo 'Pulling...'
+          sh 'git pull origin main'
+        }
+      }
+
       stage('Build') {
         steps {
           echo 'Building...'
