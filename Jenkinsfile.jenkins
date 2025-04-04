@@ -2,15 +2,11 @@ pipeline {
    agent any
 
    stages {
-       stage('Clone') {
-            steps {
-              echo 'Removing repo...'
-              deleteDir()
-            }
-          }
 
       stage('Clone') {
         steps {
+          echo 'Removing repo...'
+          deleteDir()
           echo 'Clonning...'
           // sh 'git clone https://github.com/ArbolAm/Jenkins_DQE.git'
         }
