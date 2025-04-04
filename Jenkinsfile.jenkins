@@ -20,14 +20,14 @@ pipeline {
       stage('Build') {
         steps {
           echo 'Building...'
-          sh 'chmod +x Jenkins_DQE/TestCases/simple_test.py'
+          sh 'chmod +x Jenkins_DQE/TestCases/simple_test1.py'
         }
       }
 
       stage('Test') {
         steps {
            echo 'Testing...'
-           sh 'Jenkins_DQE/TestCases/simple_test.py'
+           sh 'Jenkins_DQE/TestCases/simple_test1.py'
         }
       }
 
