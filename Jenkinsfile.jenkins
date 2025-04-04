@@ -6,16 +6,16 @@ pipeline {
       stage('Clone') {
         steps {
           echo 'Clonning...'
-          sh 'git clone https://github.com/ArbolAm/Jenkins_DQE.git'
-          sh 'ls -l'
+          // sh 'git clone https://github.com/ArbolAm/Jenkins_DQE.git'
         }
       }
 
       stage('Pull') {
         steps {
           echo 'Pulling...'
-          sh 'git checkout main'
+          git url: 'https://github.com/ArbolAm/Jenkins_DQE.git', branch: 'main'
           sh 'git pull origin main'
+          sh 'ls -l'
         }
       }
 
@@ -23,17 +23,18 @@ pipeline {
         steps {
           echo 'Building...'
           sh 'pwd'
-          sh 'ls -l Jenkins_DQE/TestCases'
-          sh 'chmod +x Jenkins_DQE/TestCases/simple_test1.py'
-
+          sh 'ls -l TestCases'
+          sh 'chmod +x TestCases/simple_test1.py'
+          sh 'python3 --version'
         }
       }
 
       stage('Test') {
         steps {
            echo 'Testing...'
-           sh 'python --version'
-           sh 'python3 Jenkins_DQE/TestCases/simple_test1.py'
+           sh 'python3 TestCases/simple_test1.py'
+           sh 'python3 TestCases/pytest_test.py'
+           // sh 'robot TestCases/hr_all.robot'
         }
       }
 
