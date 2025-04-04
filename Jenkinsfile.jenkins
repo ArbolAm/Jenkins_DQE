@@ -30,6 +30,7 @@ pipeline {
       stage('Test') {
         steps {
            echo 'Testing...'
+           sh 'python --version'
            sh 'python3 Jenkins_DQE/TestCases/simple_test1.py'
         }
       }
