@@ -6,7 +6,8 @@ pipeline {
       stage('Clone') {
         steps {
           echo 'Clonning...'
-          // sh 'git clone https://github.com/ArbolAm/Jenkins_DQE.git'
+          sh 'git clone https://github.com/ArbolAm/Jenkins_DQE.git'
+          sh 'ls -l'
         }
       }
 
@@ -24,6 +25,7 @@ pipeline {
           sh 'pwd'
           sh 'ls -l Jenkins_DQE/TestCases'
           sh 'chmod +x Jenkins_DQE/TestCases/simple_test1.py'
+
         }
       }
 
