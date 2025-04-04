@@ -20,6 +20,8 @@ pipeline {
       stage('Build') {
         steps {
           echo 'Building...'
+          sh 'pwd'
+          sh 'ls -l Jenkins_DQE/TestCases'
           sh 'chmod +x Jenkins_DQE/TestCases/simple_test1.py'
         }
       }
