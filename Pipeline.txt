@@ -1,0 +1,21 @@
+Container:
+    runs on podman from image Jenkins. all dependencies are installed in this container.
+    dependency list on screen 'dependencies'
+Logic:
+    pipeline clones git repository in the container and executes scripts directly.
+Options:
+    trigger:
+        Poll SCM
+        Github hook trigger
+    script:
+        from repository
+    SCM:
+        git
+    Project:
+        Github
+
+Flow:
+. run container
+. configure jenkins
+. create pipeline
+. execute pipeline
